@@ -30,6 +30,7 @@ async def getrandomvid(ctx):
     await ctx.send(f"[{episode.url}]")
 
 @bot.command(name = "set_update_channel", help = "Add this channel as one of the update channel.")
+@commands.has_permissions(administrator = True)
 async def update_channel_add(ctx):
     try:
         if ctx.channel.id not in hologra_update:
@@ -41,6 +42,7 @@ async def update_channel_add(ctx):
         await ctx.reply(f"Something went wrong.")
 
 @bot.command(name = "delete_update_channel", help = "Remove this channel from the list of update channel.")
+@commands.has_permissions(administrator = True)
 async def update_channel_remove(ctx):
     try:
         if ctx.channel.id in hologra_update:
@@ -52,6 +54,7 @@ async def update_channel_remove(ctx):
         await ctx.reply(f"Something went wrong.")
 
 @bot.command(name = "set_daily_channel", help = "Add this channel as one of the daily Hologra channel.")
+@commands.has_permissions(administrator = True)
 async def daily_channel_add(ctx):
     try:
         if ctx.channel.id not in daily_hologra:
@@ -63,6 +66,7 @@ async def daily_channel_add(ctx):
         await ctx.reply(f"Something went wrong.")
 
 @bot.command(name = "delete_daily_channel", help = "Remove this channel from the list of daily channel.")
+@commands.has_permissions(administrator = True)
 async def daily_channel_remove(ctx):
     try:
         if ctx.channel.id in daily_hologra:
