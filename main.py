@@ -104,7 +104,7 @@ async def send_daily_hologra():
 
 @bot.event
 async def on_ready():
-    print(f"Nakirium v0.7 had been installed as {bot.user}")
+    print(f"Nakirium v1.0 had been installed as {bot.user}")
     channel = bot.get_channel(bot_status)
     await channel.send("Nakiri-online!")
     check_for_new_Hologra.start()
